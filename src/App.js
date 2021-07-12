@@ -47,9 +47,9 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div data-test="component-app" className="App">
       <header>
-        <h1> React Todo list </h1>
+        <h1 data-test="todo-title"> React Todo list </h1>
       </header>
       <Form 
         todos={todos} 

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Form = ({inputText, setInputText, todos, setTodos, setStatus}) => {
     const inputHandler = (e) => {
-        console.log(e.target.value);
+        //console.log(e.target.value);
         setInputText(e.target.value);
     }
     const submitHandler = (e) => {
@@ -20,10 +20,10 @@ const Form = ({inputText, setInputText, todos, setTodos, setStatus}) => {
     return(
         <form>
         <input value={inputText} onChange={inputHandler} type="text" className="todo-input" />
-        <button onClick={submitHandler} className="todo-button" type="submit">
+        <button data-test="add-button" onClick={submitHandler} className="todo-button" type="submit">
             <i className="fas fa-plus-square"></i>
         </button>
-        <div className="select">
+        <div data-test="select-dropdown" className="select">
             <select onChange={statusHandler} name="todos" className="filter-todo">
             <option value="all">All</option>
             <option value="completed">Completed</option>

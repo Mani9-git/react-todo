@@ -4,7 +4,7 @@ import react from 'react';
 const Todo = ({text, todo, todos, setTodos}) => {
     //Events
     const deleteHandler = () => {
-        console.log(todo);
+        //console.log(todo);
         setTodos(todos.filter((el) => el.id !== todo.id));
     };
 
@@ -19,7 +19,7 @@ const Todo = ({text, todo, todos, setTodos}) => {
         }))
     }
     return(
-        <div className="todo">
+        <div data-test="todo" className="todo">
             <li className={`todo-item ${todo.completed ? "completed" : ''}`}>{text}</li>
             <button onClick={completeHandler} className="complete-btn">
                 <i className="fas fa-check"></i>
