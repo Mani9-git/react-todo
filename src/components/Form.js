@@ -1,6 +1,8 @@
-import React from 'react';
-
-const Form = ({inputText, setInputText, todos, setTodos, setStatus}) => {
+import React, {useState, useEffect} from 'react';
+//inputText, setInputText,
+const Form = ({todos, setTodos, setStatus}) => {
+    const [inputText, setInputText] = useState("");
+  
     const inputHandler = (e) => {
         //console.log(e.target.value);
         setInputText(e.target.value);
@@ -19,7 +21,7 @@ const Form = ({inputText, setInputText, todos, setTodos, setStatus}) => {
 
     return(
         <form>
-        <input value={inputText} onChange={inputHandler} type="text" className="todo-input" />
+        <input data-test="input-field" value={inputText} onChange={inputHandler} type="text" className="todo-input" />
         <button data-test="add-button" onClick={submitHandler} className="todo-button" type="submit">
             <i className="fas fa-plus-square"></i>
         </button>
